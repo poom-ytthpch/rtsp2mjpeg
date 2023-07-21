@@ -1,5 +1,4 @@
-ARG BUILD_FROM
-FROM $BUILD_FROM
+FROM python:3.7-buster
 
 RUN apk update && apk add --no-cache lighttpd ffmpeg python3
 RUN sed -i -r 's#\#.*mod_alias.*,.*#    "mod_alias",#g' /etc/lighttpd/lighttpd.conf
